@@ -1,0 +1,22 @@
+.chat-main
+  .main-header
+    .header-leftbox
+      %h2.current-group test
+      %ul.member-list
+        Member:
+        %li.member-first 吉村匡史
+    %a{:href => "#"}
+      .edit-btn Edit
+
+  .messages
+  .form
+    %form.new-message
+      %input.input-text{:placeholder => "type a message", :type => "text"}/
+      %label.input-box-image{:for => "message_image"}
+        = link_to "#" do
+          %label{class: "image-icon"}
+            = icon('fa', 'image')
+            %input{type: "file"}
+      %input.submit-btn{:name => "commit", :type => "submit", :value => "Send"}/
+
+
