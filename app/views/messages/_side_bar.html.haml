@@ -4,15 +4,18 @@
       %p.user-name TECH CAMP
       %ul.menu
         %li.new-group
-        = link_to "#" do
+        = link_to new_group_path do
           = icon('fas', 'edit',class: "icon")
         %li.edit-user
         = link_to "#" do
           = icon('fas', 'cog',class: "icon")
   .groups
-    = link_to "#" do
-      .group  
-        %p.group-name 匡史 落ちろよおおおおおおおおお
-        %p.latest-message もらったあああああああああああああ
+    - current_user.groups.each do |group|
+      .group
+        = link_to "#" do
+          %p.group-name 
+            =group.name
+          %p.latest-message 
+            メッセージはまだありません。
     
  
