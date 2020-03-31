@@ -119,10 +119,7 @@ background-color: #d2d2d2;
 height: 90px;
 padding: 20px 40px;
 }
-.new-message {
-  display: flex;
-  position: relative;
-}
+
 .input-text {
   font-size: 16px;
   height: 50px;
@@ -157,7 +154,7 @@ padding: 20px 40px;
 .input-box-image {
   position: absolute;
   font-size: 1.3rem;
-  top: 10px;
+  top: 17px;
   right: 130px;
   cursor: pointer;
   input{
@@ -165,5 +162,35 @@ padding: 20px 40px;
   }
 }
 
+.messages {
+  height: calc(100vh - 190px);
+  padding: 46px 40px;
+  background-color: #fafafa;
+  overflow: scroll;
+}
+.message__upper-info {
+  display: flex;
+  margin-bottom: 10px;
+}
+.message__upper-info__talker {
+  color: #434a54;
+  font-size: 16px;
+  font-weight: bold;
+}
+.message__upper-info__date {
+  color: #999999;
+  font-size: 12px;
+  margin-left: 10px;
+}
+.message__text {
+  color: #434a54;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
 
+}
+
+.new_message {
+  display: flex;
+  position: relative;
 }
