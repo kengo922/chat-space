@@ -12,11 +12,7 @@
       Edit
 
   .messages
-    = render @messages do
-      -# .message__upper-info
-      -#   %p.message__upper-info__talker 
-      -#   %p.message__upper-info__date 
-      -# %p.message__text 
+    = render @messages 
 
   .form
     = form_for [@group, @message] do |f|
@@ -27,13 +23,3 @@
           = f.file_field :image, class: 'hidden'
       = f.submit 'Send', class: 'submit-btn'
 
-
-
-    -# = form_for [@group, @message] do |f|
-    -#   %input.input-text{:placeholder => "type a message", :type => "text"}/
-    -#   %label.input-box-image{:for => "message_image"}
-    -#     .new-message-v2
-    -#       %label{class: "image-icon"}
-    -#         = icon('fa', 'image')
-    -#         %input{type: "file"}
-    -#   %input.submit-btn{:name => "commit", :type => "submit", :value => "Send"}/
