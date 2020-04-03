@@ -13,13 +13,13 @@
 
   .messages
     = render @messages do
-      .message__upper-info
-        %p.message__upper-info__talker 
-        %p.message__upper-info__date 
-      %p.message__text 
+      -# .message__upper-info
+      -#   %p.message__upper-info__talker 
+      -#   %p.message__upper-info__date 
+      -# %p.message__text 
 
   .form
-    = form_for [@group, @message], remote: true do |f|
+    = form_for [@group, @message] do |f|
       = f.text_field :content, class: 'input-text', placeholder: 'type a message'
       .form__mask
         = f.label :image, class: 'input-box-image' do

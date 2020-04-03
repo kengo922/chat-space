@@ -52,12 +52,19 @@ $(function(){
       processData: false,
       contentType: false
     })
-    .done(function(data){
-      var html = buildHTML(data);
-      $('.messages').append(html);
-      $('form')[0].reset();
+      .done(function(data){
+        console.log("hoge")
+        var html = buildHTML(data);
+        $('.messages').append(html);
+        $('form')[0].reset();
+        $('.submit-btn').prop('disabled', false);
+        $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});  
+      }) 
+      .fail(function() {
+        alert("メッセージ送信に失敗しました");
+      });
     })
-  })
+  
 
     var reloadMessages = function() {
       var last_message_id = $('.message:last').data("message-id");
@@ -85,6 +92,6 @@ $(function(){
         });
     };
     if (document.location.href.match(/\/groups\/\d+\/messages/)) {
-      setInterval(reloadMessages, 3000);
+      setInterval(reloadMessages, 7000);
     }
-  });
+});
